@@ -52,10 +52,10 @@ yarn start (or npm start)
         └── index.html     # HTML for entry file
     ├── application.js     # Provider file
     ├── constants.js       # Constants
+    ├── index.js           # Enry file
     └── theme.js           # Theme configuration for Antd
 ├── .editorconfig          #
 ├── .eslintrc              # Eslint config
-    ├── index.js           # Enry file
 ├── .gitignore             #
 ├── .babelrc               # Babel config
 └── package.json           #
