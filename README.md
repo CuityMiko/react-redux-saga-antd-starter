@@ -5,7 +5,7 @@ A React + Redux + Redux Actions + Redux Saga + Ant-Design frontend boilerplate.
 #### Setup
 ```bash
 # install dependencies
-npm install (or npm install)
+yarn (or npm install)
 
 # serve with hot reload at localhost:3000
 yarn start (or npm start)
