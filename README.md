@@ -2,8 +2,6 @@
 
 A React + Redux + Redux Actions + Redux Saga + Ant-Design frontend boilerplate.
 
-```
-```
 #### Setup
 ```bash
 # install dependencies
@@ -22,7 +20,7 @@ yarn start (or npm start)
 - `yarn clean (or npm run clean)`: Run clean dist
 
 ```
-```
+``` 
 ## Dependences
 
 - [x] Ant-Design
@@ -54,10 +52,10 @@ yarn start (or npm start)
         └── index.html     # HTML for entry file
     ├── application.js     # Provider file
     ├── constants.js       # Constants
-    ├── index.js           # Enry file
     └── theme.js           # Theme configuration for Antd
 ├── .editorconfig          #
 ├── .eslintrc              # Eslint config
+    ├── index.js           # Enry file
 ├── .gitignore             #
 ├── .babelrc               # Babel config
 └── package.json           #
