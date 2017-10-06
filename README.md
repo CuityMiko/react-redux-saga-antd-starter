@@ -2,9 +2,25 @@
 
 A React + Redux + Redux Actions + Redux Saga + Ant-Design frontend boilerplate.
 
+#### Setup
+```bash
+# install dependencies
+yarn (or npm install)
+
+# serve with hot reload at localhost:3000
+yarn start (or npm start)
+
 ```
-npm start
+## Scripts
+
+- `yarn start (or npm start)`: Starts the application on development mode
+- `yarn lint (or npm run lint)`: Run lint once
+- `yarn lint:watch (or npm run lint:watch)`: Run tests in lint mode
+- `yarn build (or npm run build)`: Build project to production
+- `yarn clean (or npm run clean)`: Run clean dist
+
 ```
+``` 
 ## Dependences
 
 - [x] Ant-Design
