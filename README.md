@@ -52,7 +52,7 @@ yarn start (or npm start)
         └── index.html     # HTML for entry file
     ├── application.js     # Provider file
     ├── constants.js       # Constants
-    ├── index.js           # Enry file
+    ├── index.js           # Entry file
     └── theme.js           # Theme configuration for Antd
 ├── .editorconfig          #
 ├── .eslintrc              # Eslint config
