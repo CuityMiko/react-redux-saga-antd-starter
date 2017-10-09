@@ -24,7 +24,7 @@ const style = {
 const Home = ({ notify, message, percent, increment, decrement }) => (
   <EmptyContent
     title="Start Application"
-    description="Wellcome to startkit application"
+    description="Welcome to the startkit application"
     icon="poweroff"
   >
     <div style={style.container}>
