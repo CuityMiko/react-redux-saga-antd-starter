@@ -1,12 +1,15 @@
 require('dotenv').config();
 
+const fs = require('fs');
 const path = require('path');
 const webpack = require('webpack');
+const lessToJs = require('less-vars-to-js');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
+const themeVariables = lessToJs(fs.readFileSync(path.join(__dirname, './src/theme.less'), 'utf8'));
 const DEV = process.env.NODE_ENV !== 'production';
 const INCLUDE_PATH = path.join(__dirname, 'src');
 
@@ -107,7 +110,7 @@ const defaultRules = [
   { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, include: INCLUDE_PATH, loader: 'url-loader?limit=10000&mimetype=image/svg+xml' },
   { test: /\.(jpe?g|png|gif)$/i, include: INCLUDE_PATH, loader: 'file-loader?name=[name].[ext]' },
   { test: /\.ico$/, include: INCLUDE_PATH, loader: 'file-loader?name=[name].[ext]' },
-  { test: /\.jsx?$/, include: INCLUDE_PATH, loader: 'babel-loader' },
+  { test: /\.jsx?$/, include: INCLUDE_PATH, exclude: /node_modules/, loader: 'babel-loader' },
 ];
 
 const devRules = [
@@ -118,6 +121,7 @@ const devRules = [
   {
     test: /\.less$/,
     include: INCLUDE_PATH,
+    exclude: /node_modules/,
     use: [
       'style-loader',
       {
@@ -144,6 +148,22 @@ const devRules = [
       },
     ],
   },
+  {
+    test: /\.less$/,
+    exclude: INCLUDE_PATH,
+    include: /node_modules/,
+    use: [
+      'style-loader',
+      'css-loader',
+      {
+        loader: 'less-loader',
+        options: {
+          modifyVars: themeVariables,
+          root: path.resolve(__dirname, './'),
+        },
+      },
+    ],
+  },
 ];
 
 const prodRules = [
@@ -157,6 +177,7 @@ const prodRules = [
   {
     test: /\.less$/,
     include: INCLUDE_PATH,
+    exclude: /node_modules/,
     use: ExtractTextPlugin.extract({
       fallback: 'style-loader',
       use: [
@@ -180,6 +201,26 @@ const prodRules = [
           loader: 'less-loader',
           options: {
             sourceMap: true,
+          },
+        },
+      ],
+    }),
+  },
+  {
+    test: /\.less$/,
+    exclude: INCLUDE_PATH,
+    include: /node_modules/,
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: [
+        {
+          loader: 'css-loader',
+        },
+        {
+          loader: 'less-loader',
+          options: {
+            modifyVars: themeVariables,
+            root: path.resolve(__dirname, './'),
           },
         },
       ],
