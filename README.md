@@ -39,25 +39,25 @@ yarn start (or npm start)
 
 ```bash
 .
-├── src                    # Source directory
-    ├── store              # Schems and flux data
+├── src                            # Source directory
+    ├── store                      # Schems and flux data
         ├── actions
         ├── sagas
         ├── configure-store.js        
         └── reducers.js
-    ├── views              # UI components
+    ├── views                      # UI components
         ├── components
         └── containers
     ├── www
-        └── index.html     # HTML for entry file
-    ├── application.js     # Provider file
-    ├── constants.js       # Constants
-    ├── index.js           # Entry file
-    └── theme.js           # Theme configuration for Antd
-├── .editorconfig          #
-├── .eslintrc              # Eslint config
-├── .gitignore             #
-├── .babelrc               # Babel config
-└── package.json           #
+        └── index.html             # HTML for entry file
+    ├── application.js             # Provider file
+    ├── constants.js               # Constants
+    ├── index.js                   # Entry file
+    └── theme.less                 # Theme configuration for Antd
+├── .editorconfig
+├── .eslintrc                      # Eslint config
+├── .gitignore
+├── .babelrc                       # Babel config
+└── package.json
 ```
 Open `http://localhost:3000` in your browser.
